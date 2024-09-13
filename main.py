@@ -53,7 +53,9 @@ with st.expander("Filter Excel Data"):
 a1, a2 = st.columns(2)
 
 with a1:
-    st.subheader("Product & Quantities", divider ="rainbow")
+    st.subheader("Product & Quantities")
+    st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
+
     source =pd.DataFrame({
         "Quantity ($)": df2["Quantity"],
         "Product" : df2["Product"],
@@ -88,7 +90,8 @@ b1,b2= st.columns(2)
     
 #dot plot
 with b1:
-        st.subheader("Products & Total Price ",divider='rainbow')
+        st.subheader("Products & Total Price ")
+        st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
         source=df2  
         chart=alt.Chart(source).mark_circle().encode(
             x="Product",
@@ -99,7 +102,8 @@ with b1:
         st.altair_chart(chart, theme="streamlit",use_container_width=True)
     
 with b2:
-    st.subheader("Products & UnitPrice ",divider='rainbow')
+    st.subheader("Products & UnitPrice ")
+    st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
     energy_source = pd.DataFrame({
         "Product": df2["Product"],
         "UnitPrice ($)":df2["UnitPrice"],
@@ -120,7 +124,8 @@ with b2:
  
 c1,c2 =st.columns(2)
 with c1:
-    st.subheader("Product & UnitPrice",divider='rainbow')
+    st.subheader("Product & UnitPrice")
+    st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
     feature_x = st.selectbox("select X, qualitative data",df2.select_dtypes("object").columns )
     feature_y = st.selectbox("select Y, quantitative data", df2.select_dtypes("number").columns)
     
@@ -130,7 +135,8 @@ with c1:
                     
     
 with c2:
-      st.subheader("Features by Frequency", divider='rainbow')
+      st.subheader("Features by Frequency")
+      st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
       feature = st.selectbox('Select only Qualitative Data',df2.select_dtypes("object").columns )
       fig,ax= plt.subplots()
       ax.hist(df2[feature], bins=20)
