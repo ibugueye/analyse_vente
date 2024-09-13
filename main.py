@@ -72,6 +72,7 @@ with a1:
 # metrics 
 with a2:
     st.subheader("Data Metrics")
+    st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
     from streamlit_extras.metric_cards import style_metric_cards
     col1, col2 = st.columns(2)
     col1.metric(label = "All number of Items", value =df2.Product.count(),delta="All Items")
@@ -83,7 +84,7 @@ with a2:
     c22.metric(label="Minimim Price",value=f"{df2.TotalPrice.min():,.0f}",delta="Low Price")
     c33.metric(label="Price Range",value=f"{df2.TotalPrice.max()-df2.TotalPrice.min() :,.0f}",delta="Price Range")
     #  Style the metrics 
-    style_metric_cards(background_color="blue", border_left_color="#e6200e",border_color="#00060a",)
+    style_metric_cards(background_color="#3344c4", border_left_color="#e6200e",border_color="#00060a",)
 
     
 b1,b2= st.columns(2)
@@ -91,7 +92,7 @@ b1,b2= st.columns(2)
 #dot plot
 with b1:
         st.subheader("Products & Total Price ")
-        st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
+        #st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
         source=df2  
         chart=alt.Chart(source).mark_circle().encode(
             x="Product",
@@ -103,7 +104,7 @@ with b1:
     
 with b2:
     st.subheader("Products & UnitPrice ")
-    st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
+    #st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
     energy_source = pd.DataFrame({
         "Product": df2["Product"],
         "UnitPrice ($)":df2["UnitPrice"],
@@ -125,7 +126,7 @@ with b2:
 c1,c2 =st.columns(2)
 with c1:
     st.subheader("Product & UnitPrice")
-    st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
+   # st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
     feature_x = st.selectbox("select X, qualitative data",df2.select_dtypes("object").columns )
     feature_y = st.selectbox("select Y, quantitative data", df2.select_dtypes("number").columns)
     
@@ -136,7 +137,7 @@ with c1:
     
 with c2:
       st.subheader("Features by Frequency")
-      st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
+     # st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
       feature = st.selectbox('Select only Qualitative Data',df2.select_dtypes("object").columns )
       fig,ax= plt.subplots()
       ax.hist(df2[feature], bins=20)
