@@ -110,6 +110,7 @@ with c1:
     
     fig, ax = plt.subplots()
     sns.scatterplot(data=df2, x=feature_x, y=feature_y, hue=df2.Product, ax=ax)
+    ax.legend(loc='center left', bbox_to_anchor=(1, 0.5), title="Espèces")
     st.pyplot(fig)
                     
 with c2:
