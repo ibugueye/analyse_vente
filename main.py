@@ -13,7 +13,7 @@ from streamlit_extras.metric_cards import *
 st.set_page_config(page_title="Home",page_icon="",layout="wide")
 
 # load data set 
-st.markdown(""" <h3 style ="color:#002b50">  IBOU'S BUSINESS ANALYTICS DASBOARD |   </h3>""", unsafe_allow_html=True)
+st.markdown(""" <h3 style ="color:#002b50">  IBOU'S BUSINESS ANALYTICS DASBOARD | Python   </h3>""", unsafe_allow_html=True)
 df= pd.read_csv("sales.csv")
 st.markdown("<hr style='border: 2px solid rainbow;'>", unsafe_allow_html=True)
 
@@ -72,7 +72,7 @@ with a1:
 # metrics 
 with a2:
     st.subheader("Data Metrics")
-    st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
+    #st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
     from streamlit_extras.metric_cards import style_metric_cards
     col1, col2 = st.columns(2)
     col1.metric(label = "All number of Items", value =df2.Product.count(),delta="All Items")
@@ -84,7 +84,7 @@ with a2:
     c22.metric(label="Minimim Price",value=f"{df2.TotalPrice.min():,.0f}",delta="Low Price")
     c33.metric(label="Price Range",value=f"{df2.TotalPrice.max()-df2.TotalPrice.min() :,.0f}",delta="Price Range")
     #  Style the metrics 
-    style_metric_cards(background_color="#3344c4", border_left_color="#e6200e",border_color="#00060a",)
+    style_metric_cards(background_color="56A923", border_left_color="#e6200e",border_color="#00060a",)
 
     
 b1,b2= st.columns(2)
