@@ -13,11 +13,15 @@ from streamlit_extras.metric_cards import *
 st.set_page_config(page_title="Home",page_icon="",layout="wide")
 
 # load data set 
-
+st.markdown(""" <h3 style ="color:#002b50">  IBOU'S BUSINESS ANALYTICS DASBOARD |   </h3>""", unsafe_allow_html=True)
 df= pd.read_csv("sales.csv")
 st.markdown("<hr style='border: 2px solid rainbow;'>", unsafe_allow_html=True)
 
+
+
+
 #load  css 
+
 
 with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>",unsafe_allow_html=True)
@@ -135,4 +139,6 @@ with c2:
       ax.set_xlabel(feature)
       ax.set_ylabel('Frequency')
       st.pyplot(fig)
+      
+      
       
