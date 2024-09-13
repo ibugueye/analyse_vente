@@ -71,7 +71,7 @@ with a1:
     
 # metrics 
 with a2:
-    st.subheader("Data Metrics", divider ="rainbow")
+    st.subheader("Data Metrics")
     from streamlit_extras.metric_cards import style_metric_cards
     col1, col2 = st.columns(2)
     col1.metric(label = "All number of Items", value =df2.Product.count(),delta="All Items")
