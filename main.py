@@ -70,7 +70,7 @@ with a2:
     c33.metric(label="Price Range", value=f"{df2.TotalPrice.max() - df2.TotalPrice.min():,.0f}", delta="Price Range")
     
     # Style the metrics 
-    style_metric_cards(background_color="#3344c4", border_left_color="#e6200e", border_color="#00060a")
+    style_metric_cards(background_color="#c2d1d1", border_left_color="#e6200e", border_color="#00060a")
 
 b1, b2 = st.columns(2)
 
