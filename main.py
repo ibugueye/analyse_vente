@@ -58,16 +58,16 @@ with a1:
 # Metrics
 with a2:
     st.subheader("Data Metrics")
-    st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
+    #st.markdown("<hr style='border: 1px solid rainbow;'>", unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     col1.metric(label="All number of Items", value=df2.Product.count(), delta="All Items")
     col2.metric(label="Sum of Product Price USD", value=f"{df2.TotalPrice.sum():,.0f}", delta=df2.TotalPrice.median())
     
     c11, c22, c33 = st.columns(3)
-    c11.metric(label="Maximum Price", value=f"{df2.TotalPrice.max():,.0f}", delta="High Price")
-    c22.metric(label="Minimum Price", value=f"{df2.TotalPrice.min():,.0f}", delta="Low Price")
-    c33.metric(label="Price Range", value=f"{df2.TotalPrice.max() - df2.TotalPrice.min():,.0f}", delta="Price Range")
+    c11.metric(label="#Maximum Price", value=f"{df2.TotalPrice.max():,.0f}", delta="High Price")
+    c22.metric(label="#Minimum Price", value=f"{df2.TotalPrice.min():,.0f}", delta="Low Price")
+    c33.metric(label="#Price Range", value=f"{df2.TotalPrice.max() - df2.TotalPrice.min():,.0f}", delta="Price Range")
     
     # Style the metrics 
     style_metric_cards(background_color="#c2d1d1", border_left_color="#e6200e", border_color="#00060a")
